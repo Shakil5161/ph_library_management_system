@@ -1,8 +1,5 @@
-import { useLocation } from "react-router";
 
 function Footer() {
-    const location = useLocation();
-   const isBorrowPage = location.pathname === '/create-book';
     return (
     <>
     <div className="text-center mt-20">
