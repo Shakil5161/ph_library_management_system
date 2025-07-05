@@ -2,6 +2,13 @@
 ✅ Public Routes
 All pages are publicly accessible without authentication. Users can freely navigate, view, borrow, and manage books.
 
+Project link =>
+Front-end: https://ph-library-management-system.vercel.app/
+Front-end GitHub link: https://github.com/Shakil5161/ph_library_management_system
+
+Back-end: https://ph-level-2-assignment-3.vercel.app/
+Front-end GitHub link: https://github.com/Shakil5161/ph_level_2_assignment_3
+
 📖 Book Management
 View All Books: Table display of books with columns: Title, Author, Genre, ISBN, Copies, Availability, Actions.
 
@@ -142,4 +149,4 @@ Backend API URL: your-backend-link.com
 👨‍💻 Author
 Shakil Ahmed
 Frontend & Backend Developer
-LinkedIn
+LinkedIn: https://www.linkedin.com/in/shakilahmed5161/
