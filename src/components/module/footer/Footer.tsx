@@ -1,28 +1,14 @@
-import { Link, useLocation } from "react-router";
+import { useLocation } from "react-router";
 
 function Footer() {
     const location = useLocation();
    const isBorrowPage = location.pathname === '/create-book';
     return (
     <>
-    {
-        !isBorrowPage && <div className="text-center mt-20">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-5xl dark:text-white">
-                Add your favorite book to our collection
-            </h2>
-
-            <p className="mx-auto mt-4 max-w-[800px] text-gray-500 dark:text-gray-400">
-                Join our community of book lovers and share your favorite reads with others. Whether it's a classic novel, a thrilling mystery, or a heartwarming romance, we want to hear about it!
-            </p>
-
-            <Link
-                to="create-book"
-                className="mt-8 inline-block dark:text-white rounded-full border border-indigo-600 px-12 py-3 text-sm font-medium text-block hover:bg-indigo-600 hover:text-white focus:ring-3 focus:outline-hidden"
-            >
-                Get Started
-            </Link>
-            </div>  
-    }
+    <div className="text-center mt-20">
+            <img alt="" className=" inset-0 h-full w-full object-cover" src="https://bookecart.com/assets/web/images/Service%20strips.png"></img>
+    </div>  
+    
 
     <footer className="bg-white lg:grid lg:grid-cols-5 dark:bg-gray-900 mt-12">
 
