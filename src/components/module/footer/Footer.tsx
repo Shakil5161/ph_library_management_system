@@ -8,11 +8,8 @@ function Footer() {
     <div className="text-center mt-20">
             <img alt="" className=" inset-0 h-full w-full object-cover" src="https://raw.githubusercontent.com/Shakil5161/ph_library_management_system/refs/heads/main/bookCart.png"></img>
     </div>  
-    
 
-    <footer className="bg-white lg:grid lg:grid-cols-5 dark:bg-gray-900 mt-12">
-
-            
+<footer className="bg-white lg:grid lg:grid-cols-5 dark:bg-gray-900 mt-12">
   <div className="relative block h-32 lg:col-span-2 lg:h-full">
     <img
       src="https://cdn.pixabay.com/photo/2010/12/22/10/38/book-3901_1280.jpg"
