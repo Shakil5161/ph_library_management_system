@@ -1,69 +1,145 @@
-# React + TypeScript + Vite
+🌟 Features Overview
+✅ Public Routes
+All pages are publicly accessible without authentication. Users can freely navigate, view, borrow, and manage books.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📖 Book Management
+View All Books: Table display of books with columns: Title, Author, Genre, ISBN, Copies, Availability, Actions.
 
-Currently, two official plugins are available:
+Add Book: Form to create a new book with fields like title, author, description, ISBN, and copies.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Edit Book: Edit book details via modal or separate route. Reflect changes in UI after submission.
 
-## Expanding the ESLint configuration
+Delete Book: Confirmation-based removal of a book.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Borrow Book: Open a borrow form directly from the book list.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+📝 Borrow Book
+Borrow form includes quantity and due date.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Business rules:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Quantity must not exceed available copies.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+When copies reach 0, the book is marked as unavailable.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+After borrowing, user is redirected to the Borrow Summary.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+📊 Borrow Summary
+Displays an aggregated list of borrowed books.
+
+Columns: Book Title, ISBN, Total Quantity Borrowed.
+
+Data is retrieved from a backend aggregation endpoint.
+
+🧩 Pages & Routing
+Route	Description
+/books	View all books (table with action buttons).
+/create-book	Add a new book using a form.
+/books/:id	View single book detail.
+/edit-book/:id	Edit a book (optional modal or page).
+/borrow/:bookId	Borrow form for a specific book.
+/borrow-summary	Aggregated borrow records.
+
+💻 Tech Stack
+Layer	Technology
+Frontend	React, TypeScript
+State Management	Redux Toolkit, RTK Query
+Styling	Tailwind CSS
+Backend	Node.js, Express.js
+Database	MongoDB, Mongoose
+Forms & Validation	React Hook Form
+Date Management	date-fns
+
+🔄 API Integration
+All endpoints are integrated using RTK Query.
+
+Strongly typed using TypeScript.
+
+Optimistic UI updates and toast notifications implemented.
+
+📐 Backend Structure
+📘 Books Schema
+ts
+export interface IBook {
+    title: string,
+    author: string,
+    genre: "FICTION" | "NON_FICTION" | "SCIENCE" | "HISTORY" | "BIOGRAPHY" | "FANTASY",
+    isbn: string,
+    description: string,
+    copies: number,
+    available: boolean,
+    createdAt?: Date; 
+    updatedAt?: Date;
+}
+
+Backend Features
+Full CRUD for Books.
+
+Borrow logic with:
+
+Stock check
+
+Auto update of availability
+
+Aggregation API for borrow summary.
+
+Pagination support for books.
+
+Centralized error handling with meaningful messages.
+
+🧠 Business Logic Highlights
+Book becomes unavailable when copies reach 0.
+
+Borrowed quantity cannot exceed available stock.
+
+Toast messages give users clear feedback for every action.
+
+Uses optimistic UI updates where appropriate.
+
+🌐 Responsive UI/UX
+Fully responsive design with Tailwind CSS.
+
+Clean and minimalist interface.
+
+Mobile-first layout with optimized forms and modals.
+
+Clear labels, buttons, and feedback throughout the UI.
+
+⚡ Bonus Features Implemented
+Feature	Status
+Optimistic UI Updates	✅
+Toast Notifications (sonner)	✅
+Fully Responsive Layout	✅
+Type-Safe Forms	✅
+
+🚀 Getting Started
+1. Clone the Repository
+bash
+Copy
+Edit
+git clone https://github.com/your-username/library-management-system.git
+cd library-management-system
+2. Install Dependencies
+Frontend
+bash
+Copy
+Edit
+cd client
+npm install
+npm run dev
+Backend
+bash
+Copy
+Edit
+cd server
+npm install
+npm run dev
+🔗 Deployment
+Frontend Live URL: your-frontend-link.com
+
+Backend API URL: your-backend-link.com
+
+👨‍💻 Author
+Shakil Ahmed
+Frontend & Backend Developer
+LinkedIn

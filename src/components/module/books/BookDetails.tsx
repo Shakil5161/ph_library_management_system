@@ -13,9 +13,9 @@ function BookDetails() {
   const book = data.data;
 
   return (
-    <div className="p-6">
+    <div className="pt-6">
     
-<div className="flex justify-center items-center">
+<div className="flex justify-center items-center p-0 sm:p-6">
     <div className="max-w-[720px] mx-auto">
         <div className="block mb-4 mx-auto border-b border-slate-300 pb-2 max-w-[360px]">
            
@@ -27,7 +27,7 @@ function BookDetails() {
                     src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1198&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="card-image" className="object-cover w-full h-full" />
             </div>
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
                 <h6
                     className="block mb-4 font-sans text-xs sm:text-base text-left antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
                         
