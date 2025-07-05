@@ -6,7 +6,7 @@ function Footer() {
     return (
     <>
     <div className="text-center mt-20">
-            <img alt="" className=" inset-0 h-full w-full object-cover" src="https://bookecart.com/assets/web/images/Service%20strips.png"></img>
+            <img alt="" className=" inset-0 h-full w-full object-cover" src="https://raw.githubusercontent.com/Shakil5161/ph_library_management_system/refs/heads/main/bookCart.png"></img>
     </div>  
     
 
