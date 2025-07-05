@@ -9,7 +9,7 @@ function Books() {
     const [page, setPage] = useState(1);
     const limit = 10;
 
-     const { data, isLoading, isError } = useGetBooksQuery({page, limit, sortBy: 'createdAt', sort: 'desc', });
+     const { data, isLoading } = useGetBooksQuery({page, limit, sortBy: 'createdAt', sort: 'desc', });
                                                                     
   
     return (
